@@ -46,7 +46,7 @@ const Register = (props) => {
 
   useEffect(() => {
     axios
-      .post("http://localhost:4000/user/getshop", newUsed)
+      .post("https://cc-backend-n5nv.onrender.com/user/getshop", newUsed)
       .then((response) => {
         console.log(response.data);
         setshopname(response.data.shopname);
@@ -85,7 +85,7 @@ const Register = (props) => {
     };
 
     axios
-      .post("http://localhost:4000/user/addfood", newUser)
+      .post("https://cc-backend-n5nv.onrender.com/user/addfood", newUser)
       .then((response) => {
         alert("Successfully added");
         console.log(response.data);
@@ -100,7 +100,9 @@ const Register = (props) => {
 
       <br />
       <div className="container">
-        <h1 style={{ textAlign: "center", color: "#bd7454" }}>Enter details of food item </h1>
+        <h1 style={{ textAlign: "center", color: "#bd7454" }}>
+          Enter details of food item{" "}
+        </h1>
         <br />
         <Grid
           container

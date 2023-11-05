@@ -50,7 +50,7 @@ const FoodLista = (props) => {
       email: localStorage.getItem("uemail"),
     };
     axios
-      .post("http://localhost:4000/user/jm", mi)
+      .post("https://cc-backend-n5nv.onrender.com/user/jm", mi)
       .then((response) => {
         setUsers(response.data);
       })
@@ -102,11 +102,11 @@ const FoodLista = (props) => {
       //setIsRatingVisible(false);
       //setShowButtons(false);
       // Make an axios request to send the rating data to the backend
-      //    axios.post("http://localhost:4000/user/ratstatus",ratingData).then((response)=>{
+      //    axios.post("https://cc-backend-n5nv.onrender.com/user/ratstatus",ratingData).then((response)=>{
       //     console.log(response.data);
       //    });
       axios
-        .post("http://localhost:4000/user/rating", ratingData)
+        .post("https://cc-backend-n5nv.onrender.com/user/rating", ratingData)
         .then((response) => {
           console.log("Rating submitted successfully:", response.data);
           setIsRatingVisible(false);
@@ -182,7 +182,7 @@ const FoodLista = (props) => {
 
                                   axios
                                     .post(
-                                      "http://localhost:4000/user/emphasis",
+                                      "https://cc-backend-n5nv.onrender.com/user/emphasis",
                                       nth
                                     )
                                     .then((response) => {

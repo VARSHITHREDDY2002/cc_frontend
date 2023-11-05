@@ -29,7 +29,7 @@ const UsersList = (props) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/user")
+      .get("https://cc-backend-n5nv.onrender.com/user")
       .then((response) => {
         setUsers(response.data);
         setSortedUsers(response.data);

@@ -81,14 +81,16 @@ const Register = (props) => {
       closetime: closetime,
     };
 
-    axios.post("http://localhost:4000/user/vr", newUser).then((response) => {
-      if (response.data.message) {
-        alert(response.data.message);
-      } else {
-        alert("Created\t" + response.data.name);
-      }
-      console.log(response.data);
-    });
+    axios
+      .post("https://cc-backend-n5nv.onrender.com/user/vr", newUser)
+      .then((response) => {
+        if (response.data.message) {
+          alert(response.data.message);
+        } else {
+          alert("Created\t" + response.data.name);
+        }
+        console.log(response.data);
+      });
 
     resetInputs();
   };

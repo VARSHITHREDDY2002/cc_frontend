@@ -43,21 +43,23 @@ const Register = (props) => {
       password: password,
     };
 
-    axios.post("http://localhost:4000/user/login", newUser).then((response) => {
-      alert(response.data);
+    axios
+      .post("https://cc-backend-n5nv.onrender.com/user/login", newUser)
+      .then((response) => {
+        alert(response.data);
 
-      if (response.data === "Buyer Logged In") {
-        localStorage.setItem("uemail", email);
+        if (response.data === "Buyer Logged In") {
+          localStorage.setItem("uemail", email);
 
-        navigate("/nav");
-      } else if (response.data === "Vendor Logged In") {
-        localStorage.setItem("uemail", email);
+          navigate("/nav");
+        } else if (response.data === "Vendor Logged In") {
+          localStorage.setItem("uemail", email);
 
-        navigate("/navl");
-      }
+          navigate("/navl");
+        }
 
-      console.log(response.data);
-    });
+        console.log(response.data);
+      });
 
     resetInputs();
   };
@@ -76,7 +78,7 @@ const Register = (props) => {
               value={email}
               autoComplete="off"
               onChange={onChangeEmail}
-              style={{ width: "250px"}}
+              style={{ width: "250px" }}
             />
           </Grid>
 
@@ -92,7 +94,11 @@ const Register = (props) => {
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
-                    <IconButton onClick={togglePasswordVisibility} edge="end" style={{margin:"0px", padding: "0px", minWidth:"0px"}}>
+                    <IconButton
+                      onClick={togglePasswordVisibility}
+                      edge="end"
+                      style={{ margin: "0px", padding: "0px", minWidth: "0px" }}
+                    >
                       {showPassword ? (
                         <VisibilityOffIcon />
                       ) : (
@@ -117,7 +123,7 @@ const Register = (props) => {
                 background: "transparent",
                 cursor: "pointer",
                 color: "#ff8521",
-                fontWeight: "bolder"
+                fontWeight: "bolder",
               }}
             >
               Forgot Password?

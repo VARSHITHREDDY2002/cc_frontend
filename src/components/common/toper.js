@@ -36,7 +36,7 @@ const UsersList = (props) => {
 
   useEffect(() => {
     axios
-      .post("http://localhost:4000/user/sjac", nef)
+      .post("https://cc-backend-n5nv.onrender.com/user/sjac", nef)
       .then((response) => {
         setUsers(response.data);
         console.log(response.data);

@@ -30,7 +30,7 @@ const Uprof = (props) => {
 
   useEffect(() => {
     axios
-      .post("http://localhost:4000/user/foodgetinfo", newUser)
+      .post("https://cc-backend-n5nv.onrender.com/user/foodgetinfo", newUser)
       .then((response) => {
         console.log(response.data);
         setName(response.data.name);
@@ -47,10 +47,12 @@ const Uprof = (props) => {
   };
 
   useEffect(() => {
-    axios.post("http://localhost:4000/user/tower", netUser).then((response) => {
-      console.log(response.data);
-      setmoney(response.data.wallet);
-    });
+    axios
+      .post("https://cc-backend-n5nv.onrender.com/user/tower", netUser)
+      .then((response) => {
+        console.log(response.data);
+        setmoney(response.data.wallet);
+      });
   }, []);
 
   var today = new Date();
@@ -79,7 +81,7 @@ const Uprof = (props) => {
       };
 
       axios
-        .post("http://localhost:4000/user/placing", neeUser)
+        .post("https://cc-backend-n5nv.onrender.com/user/placing", neeUser)
         .then((response) => {
           alert(response.data);
           console.log(response.data);
@@ -89,7 +91,7 @@ const Uprof = (props) => {
         id: localStorage.getItem("O_id"),
       };
 
-      // axios.post("http://localhost:4000/user/macos", mli).then((response) => {
+      // axios.post("https://cc-backend-n5nv.onrender.com/user/macos", mli).then((response) => {
       //   console.log(response.data);
       // });
 
@@ -98,10 +100,12 @@ const Uprof = (props) => {
         dd: amount,
       };
 
-      axios.post("http://localhost:4000/user/machine", ml).then((response) => {
-        console.log(response.data);
-        navigate("/carter");
-      });
+      axios
+        .post("https://cc-backend-n5nv.onrender.com/user/machine", ml)
+        .then((response) => {
+          console.log(response.data);
+          navigate("/carter");
+        });
     } else {
       alert("Not enough money");
     }

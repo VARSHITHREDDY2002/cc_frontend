@@ -25,7 +25,7 @@ const Uprof = (props) => {
     };
 
     axios
-      .post("http://localhost:4000/user/walletism", neeUser)
+      .post("https://cc-backend-n5nv.onrender.com/user/walletism", neeUser)
       .then((response) => {
         alert("Added Successfully");
         console.log(response.data);

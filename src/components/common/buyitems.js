@@ -35,7 +35,7 @@ const Iod = (props) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/user/ten")
+      .get("https://cc-backend-n5nv.onrender.com/user/ten")
       .then((response) => {
         setUsers(response.data);
       })
@@ -49,7 +49,9 @@ const Iod = (props) => {
       <Navbarer activePage={activePage} />
       <br />
       <div className="container">
-        <h1 style={{ textAlign: "center" ,color: "#bd7454"}}>Food items list</h1>
+        <h1 style={{ textAlign: "center", color: "#bd7454" }}>
+          Food items list
+        </h1>
         <br />
         <Grid>
           <Grid>
@@ -126,7 +128,7 @@ const Iod = (props) => {
                           }
                         })()}
                       </TableCell>
-                       {/* <TableCell>
+                      {/* <TableCell>
                         {" "}
                         <Button
                           //#cc835d
@@ -141,7 +143,7 @@ const Iod = (props) => {
                             };
 
                             axios
-                              .post("http://localhost:4000/user/far", nUser)
+                              .post("https://cc-backend-n5nv.onrender.com/user/far", nUser)
                               .then((response) => {
                                 alert("success");
                                 console.log(response.data);

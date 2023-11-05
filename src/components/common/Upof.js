@@ -59,7 +59,7 @@ const Uprof = (props) => {
 
   useEffect(() => {
     axios
-      .post("http://localhost:4000/user/getinfo", newUser)
+      .post("https://cc-backend-n5nv.onrender.com/user/getinfo", newUser)
       .then((response) => {
         console.log(response.data);
         setName(response.data.name);
@@ -93,7 +93,7 @@ const Uprof = (props) => {
     };
 
     axios
-      .post("http://localhost:4000/user/bupdate", neeUser)
+      .post("https://cc-backend-n5nv.onrender.com/user/bupdate", neeUser)
       .then((response) => {
         alert(response.data);
         console.log(response.data);
@@ -156,7 +156,10 @@ const Uprof = (props) => {
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
-                    <IconButton onClick={togglePasswordVisibility} style={{margin:"0px", padding: "0px", minWidth:"0px"}}>
+                    <IconButton
+                      onClick={togglePasswordVisibility}
+                      style={{ margin: "0px", padding: "0px", minWidth: "0px" }}
+                    >
                       {showPassword ? (
                         <VisibilityOffIcon />
                       ) : (

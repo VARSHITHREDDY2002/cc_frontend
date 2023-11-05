@@ -39,7 +39,7 @@ const FoodList = (props) => {
       email: localStorage.getItem("uemail"),
     };
     axios
-      .post("http://localhost:4000/user/lela", heh)
+      .post("https://cc-backend-n5nv.onrender.com/user/lela", heh)
       .then((response) => {
         setUsers(response.data);
       })
@@ -48,7 +48,7 @@ const FoodList = (props) => {
       });
 
     axios
-      .post("http://localhost:4000/user/lcu", heh)
+      .post("https://cc-backend-n5nv.onrender.com/user/lcu", heh)
       .then((response) => {
         setyg(response.data.counter);
       })
@@ -70,7 +70,9 @@ const FoodList = (props) => {
 
       <br />
       <div className="container">
-        <h1 style={{ textAlign: "center", color: "#bd7454" }}>Current Status of Orders</h1>
+        <h1 style={{ textAlign: "center", color: "#bd7454" }}>
+          Current Status of Orders
+        </h1>
         <br />
         <Grid>
           <Grid>
@@ -90,7 +92,7 @@ const FoodList = (props) => {
                 <TableBody>
                   {users.map((user, ind) => (
                     <TableRow key={ind}>
-                      <TableCell>{ind+1}</TableCell>
+                      <TableCell>{ind + 1}</TableCell>
 
                       <TableCell>{user.name}</TableCell>
                       <TableCell>{user.bemail}</TableCell>
@@ -118,7 +120,7 @@ const FoodList = (props) => {
 
                                   axios
                                     .post(
-                                      "http://localhost:4000/user/emphasis",
+                                      "https://cc-backend-n5nv.onrender.com/user/emphasis",
 
                                       nth
                                     )
@@ -136,13 +138,13 @@ const FoodList = (props) => {
                                       // .then((response) => {
                                       //   console.log("Email sent successfully!", response);
                                       //   axios
-                                      //   .post("http://localhost:4000/user/passwordupdate", newUser)
+                                      //   .post("https://cc-backend-n5nv.onrender.com/user/passwordupdate", newUser)
                                       //   .then((response) => {
                                       //     // alert("Successfully added");
                                       //     // console.log(response.data);
                                       //     alert(response.data);
                                       //     navigate("/login");
-                                
+
                                       //   });
                                       if (response.data.check === "Accepted") {
                                         // var templateParams = {
@@ -154,17 +156,18 @@ const FoodList = (props) => {
                                         // };
 
                                         // template_ikeuk05
-                                        const message = "Your order has been Accepted";
+                                        const message =
+                                          "Your order has been Accepted";
                                         const email = user.bemail;
                                         emailjs
                                           .send(
                                             "service_kco8l4i",
                                             "template_jasvmbe",
-                                                {
-                                                  to_mail: email,
-                                                  message: message,
-                                                },
-                                                "YBRAgph4SiNcQNH2y"
+                                            {
+                                              to_mail: email,
+                                              message: message,
+                                            },
+                                            "YBRAgph4SiNcQNH2y"
                                           )
                                           .then(
                                             function (response) {
@@ -179,7 +182,9 @@ const FoodList = (props) => {
                                             }
                                           );
                                       }
-                                      if (response.data.check === "ReadyforPickup") {
+                                      if (
+                                        response.data.check === "ReadyforPickup"
+                                      ) {
                                         // var templateParams = {
                                         //   subject: user.shopname,
                                         //   tomail: "nithil99m2@gmail.com",
@@ -189,17 +194,18 @@ const FoodList = (props) => {
                                         // };
 
                                         // template_ikeuk05
-                                        const message = "Your order has been prepared.Please come and pickup";
+                                        const message =
+                                          "Your order has been prepared.Please come and pickup";
                                         const email = user.bemail;
                                         emailjs
                                           .send(
                                             "service_kco8l4i",
                                             "template_jasvmbe",
-                                                {
-                                                  to_mail: email,
-                                                  message: message,
-                                                },
-                                                "YBRAgph4SiNcQNH2y"
+                                            {
+                                              to_mail: email,
+                                              message: message,
+                                            },
+                                            "YBRAgph4SiNcQNH2y"
                                           )
                                           .then(
                                             function (response) {
@@ -216,7 +222,7 @@ const FoodList = (props) => {
                                       }
                                       alert(response.data.message);
                                       if (
-                                        response.data.message===
+                                        response.data.message ===
                                         "Moved to next stage"
                                       ) {
                                         window.location.reload(false);
@@ -241,30 +247,31 @@ const FoodList = (props) => {
                                 }}
                                 variant="contained"
                                 onClick={() => {
-                                  const message = "Your order has been Rejected";
-                                        const email = user.bemail;
-                                        emailjs
-                                          .send(
-                                            "service_kco8l4i",
-                                            "ttemplate_jasvmbe",
-                                                {
-                                                  to_mail: email,
-                                                  message: message,
-                                                },
-                                                "YBRAgph4SiNcQNH2y"
-                                          )
-                                          .then(
-                                            function (response) {
-                                              console.log(
-                                                "SUCCESS!",
-                                                response.status,
-                                                response.text
-                                              );
-                                            },
-                                            function (error) {
-                                              console.log("FAILED...", error);
-                                            }
-                                          );
+                                  const message =
+                                    "Your order has been Rejected";
+                                  const email = user.bemail;
+                                  emailjs
+                                    .send(
+                                      "service_kco8l4i",
+                                      "ttemplate_jasvmbe",
+                                      {
+                                        to_mail: email,
+                                        message: message,
+                                      },
+                                      "YBRAgph4SiNcQNH2y"
+                                    )
+                                    .then(
+                                      function (response) {
+                                        console.log(
+                                          "SUCCESS!",
+                                          response.status,
+                                          response.text
+                                        );
+                                      },
+                                      function (error) {
+                                        console.log("FAILED...", error);
+                                      }
+                                    );
 
                                   const nth = {
                                     id: user._id,
@@ -272,7 +279,7 @@ const FoodList = (props) => {
 
                                   axios
                                     .post(
-                                      "http://localhost:4000/user/emphasiser",
+                                      "https://cc-backend-n5nv.onrender.com/user/emphasiser",
                                       nth
                                     )
                                     .then((response) => {
@@ -292,7 +299,7 @@ const FoodList = (props) => {
 
                                   axios
                                     .post(
-                                      "http://localhost:4000/user/refund",
+                                      "https://cc-backend-n5nv.onrender.com/user/refund",
                                       sd
                                     )
                                     .then((response) => {

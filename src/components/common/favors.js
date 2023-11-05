@@ -15,7 +15,7 @@ import axios from "axios";
 const Homersa = (props) => {
   const [users, setUsers] = useState([]);
   const [activePage, setActivePage] = useState("Favour");
-  const [favours,setFavours]=useState([]);
+  const [favours, setFavours] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,15 +23,15 @@ const Homersa = (props) => {
       email: localStorage.getItem("uemail"),
     };
     axios
-      .post("http://localhost:4000/user/tenner", news)
+      .post("https://cc-backend-n5nv.onrender.com/user/tenner", news)
       .then((response) => {
         setUsers(response.data.favs);
       })
       .catch((error) => {
         console.log(error);
       });
-      axios
-      .post("http://localhost:4000/user/favourites", users)
+    axios
+      .post("https://cc-backend-n5nv.onrender.com/user/favourites", users)
       .then((response) => {
         setFavours(response.data.ans);
       })

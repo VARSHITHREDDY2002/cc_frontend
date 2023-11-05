@@ -36,7 +36,7 @@ const FoodList = (props) => {
       email: localStorage.getItem("uemail"),
     };
     axios
-      .post("http://localhost:4000/user", heh)
+      .post("https://cc-backend-n5nv.onrender.com/user", heh)
       .then((response) => {
         setUsers(response.data);
         //window.location.reload(false);
@@ -55,7 +55,7 @@ const FoodList = (props) => {
   };
   const onSubmit1 = (helo) => {
     axios
-      .post("http://localhost:4000/user/available", helo)
+      .post("https://cc-backend-n5nv.onrender.com/user/available", helo)
       .then((response) => {
         setStatus(response.data.status);
         window.location.reload(false);
@@ -70,7 +70,9 @@ const FoodList = (props) => {
       <Navbarers activePage={activePage} />
       <br />
       <div className="container">
-        <h1 style={{ textAlign: "center" , color: "#bd7454" }}>My Food items list</h1>
+        <h1 style={{ textAlign: "center", color: "#bd7454" }}>
+          My Food items list
+        </h1>
         <br />
         <Grid>
           <Grid>
@@ -88,7 +90,7 @@ const FoodList = (props) => {
                 <TableBody>
                   {users.map((user, ind) => (
                     <TableRow key={ind}>
-                      <TableCell>{ind+1}</TableCell>
+                      <TableCell>{ind + 1}</TableCell>
                       <TableCell>{user.type}</TableCell>
                       <TableCell>{user.name}</TableCell>
                       <TableCell>
@@ -106,7 +108,7 @@ const FoodList = (props) => {
 
 
                       axios
-                        .post("http://localhost:4000/user/delfood", nUser)
+                        .post("https://cc-backend-n5nv.onrender.com/user/delfood", nUser)
                         .then((response) => {
                           alert(response.data);
                           window.location.reload(false);
@@ -126,7 +128,10 @@ const FoodList = (props) => {
                             };
 
                             axios
-                              .post("http://localhost:4000/user/delfood", nUser)
+                              .post(
+                                "https://cc-backend-n5nv.onrender.com/user/delfood",
+                                nUser
+                              )
                               .then((response) => {
                                 alert(response.data);
                                 window.location.reload(false);
@@ -145,9 +150,9 @@ const FoodList = (props) => {
                       <TableCell>
                         {" "}
                         <Button
-                        //f18940
+                          //f18940
                           style={{
-                            backgroundColor:"#ff8521"
+                            backgroundColor: "#ff8521",
                           }}
                           variant="contained"
                           onClick={() => onSubmit(user._id)}
@@ -159,7 +164,7 @@ const FoodList = (props) => {
                         {" "}
                         <Button
                           style={{
-                            backgroundColor:"#ff8521"
+                            backgroundColor: "#ff8521",
                           }}
                           variant="contained"
                           onClick={() => onSubmit1(user._id)}

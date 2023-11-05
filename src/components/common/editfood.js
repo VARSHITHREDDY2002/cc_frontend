@@ -33,7 +33,7 @@ const Vedit = (props) => {
 
   useEffect(() => {
     axios
-      .post("http://localhost:4000/user/editgetinfo", newUser)
+      .post("https://cc-backend-n5nv.onrender.com/user/editgetinfo", newUser)
       .then((response) => {
         console.log(response.data);
         setName(response.data.name);
@@ -59,7 +59,7 @@ const Vedit = (props) => {
     };
 
     axios
-      .post("http://localhost:4000/user/foodupdate", neeUser)
+      .post("https://cc-backend-n5nv.onrender.com/user/foodupdate", neeUser)
       .then((response) => {
         alert(response.data);
         console.log(response.data);

@@ -10,8 +10,9 @@ import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 
 function generateRandomString(length) {
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let randomString = '';
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let randomString = "";
 
   for (let i = 0; i < length; i++) {
     const randomIndex = Math.floor(Math.random() * characters.length);
@@ -35,10 +36,10 @@ const Register = (props) => {
   const onSubmit = (event) => {
     event.preventDefault();
     console.log(email);
-const message = generateRandomString(6);
-    const newUser={
-        email:email,
-        password:message,
+    const message = generateRandomString(6);
+    const newUser = {
+      email: email,
+      password: message,
     };
     emailjs
       .send(
@@ -53,15 +54,16 @@ const message = generateRandomString(6);
       .then((response) => {
         console.log("Email sent successfully!", response);
         axios
-        .post("http://localhost:4000/user/passwordupdate", newUser)
-        .then((response) => {
-          // alert("Successfully added");
-          // console.log(response.data);
-          alert(response.data);
-          navigate("/login");
-
-        });
-  
+          .post(
+            "https://cc-backend-n5nv.onrender.com/user/passwordupdate",
+            newUser
+          )
+          .then((response) => {
+            // alert("Successfully added");
+            // console.log(response.data);
+            alert(response.data);
+            navigate("/login");
+          });
 
         resetInputs();
       })

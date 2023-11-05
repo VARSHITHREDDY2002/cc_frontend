@@ -29,7 +29,7 @@ const Homersk = (props) => {
       email: localStorage.getItem("uemail"),
     };
     axios
-      .post("http://localhost:4000/user/money", mi)
+      .post("https://cc-backend-n5nv.onrender.com/user/money", mi)
       .then((response) => {
         setVendors(response.data.money);
       })
@@ -37,7 +37,7 @@ const Homersk = (props) => {
         console.log(error);
       });
     axios
-      .post("http://localhost:4000/user/lening", mi)
+      .post("https://cc-backend-n5nv.onrender.com/user/lening", mi)
       .then((response) => {
         setUsers(response.data);
       })
@@ -51,7 +51,7 @@ const Homersk = (props) => {
       <Navbarers activePage={activePage} />
       <br />
       <div className="container">
-        <h1 style={{ textAlign: "center" , color: "#bd7454" }}>Statistics</h1>
+        <h1 style={{ textAlign: "center", color: "#bd7454" }}>Statistics</h1>
         <br />
         <Grid>
           <Grid item xs={12} md={9} lg={9}>
@@ -63,10 +63,16 @@ const Homersk = (props) => {
                       {(() => {
                         //console.log(user);
 
-                        if (user.status === "ReadyforPickup" && user.ratstatus==="false") {
+                        if (
+                          user.status === "ReadyforPickup" &&
+                          user.ratstatus === "false"
+                        ) {
                           hello = hello + 1;
                           // setUse(w);
-                        } else if (user.ratstatus === "true"||user.status==="completed") {
+                        } else if (
+                          user.ratstatus === "true" ||
+                          user.status === "completed"
+                        ) {
                           yo = yo + 1;
                           // setUse(w);
                         } else {

@@ -70,7 +70,7 @@ const Vprof = (props) => {
 
   useEffect(() => {
     axios
-      .post("http://localhost:4000/user/vgetinfo", newUser)
+      .post("https://cc-backend-n5nv.onrender.com/user/vgetinfo", newUser)
       .then((response) => {
         console.log(response.data);
         setName(response.data.name);
@@ -97,7 +97,7 @@ const Vprof = (props) => {
     };
 
     axios
-      .post("http://localhost:4000/user/vupdate", newVser)
+      .post("https://cc-backend-n5nv.onrender.com/user/vupdate", newVser)
       .then((response) => {
         alert(response.data);
         console.log(response.data);

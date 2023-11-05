@@ -82,14 +82,16 @@ const Register = (props) => {
       batchName: batchName,
     };
 
-    axios.post("http://localhost:4000/user/ur", newUser).then((response) => {
-      if (response.data.message) {
-        alert(response.data.message);
-      } else {
-        alert("Created\t" + response.data.name);
-      }
-      console.log(response.data);
-    });
+    axios
+      .post("https://cc-backend-n5nv.onrender.com/user/ur", newUser)
+      .then((response) => {
+        if (response.data.message) {
+          alert(response.data.message);
+        } else {
+          alert("Created\t" + response.data.name);
+        }
+        console.log(response.data);
+      });
 
     resetInputs();
   };
